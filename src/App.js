@@ -1,6 +1,7 @@
 import "./App.css";
 import { Component } from "react";
 import Counter from "./components/ Counter";
+import ControlStepClick from "./components/ControlStepClick";
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class App extends Component {
     };
   }
   handleChange = (e) => {
-    // const { step } = this.state;
     const {
       target: { value },
     } = e;
@@ -24,14 +24,8 @@ class App extends Component {
 
     return (
       <>
-        <input
-          value={this.state.value}
-          onChange={this.handleChange}
-          type="number"
-          name="number"
-          placeholder="0"
-        />
         <Counter step={step} />
+        <ControlStepClick step={step} handleChange={this.handleChange} />
       </>
     );
   }
