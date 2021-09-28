@@ -9,11 +9,9 @@ class Counter extends Component {
   }
 
   handleClick = () => {
-    const { clickAmount } = this.state;
-    const { step } = this.props;
-    this.setState({
-      clickAmount: clickAmount + step,
-    });
+    this.setState((state, props) => ({
+      clickAmount: state.clickAmount + props.step,
+    }));
   };
 
   render() {
